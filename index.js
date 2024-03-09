@@ -57,49 +57,49 @@ const start = async () => {
             chatFlag = 'sbor_fio';
             await bot.sendMessage(chatId, `Сейчас я задам вам несколько вопросов, ответьте на них`);
             return bot.sendMessage(chatId, `Напишите ваше ФИО`);
-          }if (text && chatFlag === 'sbor_fio') {
+          }if (text && chatFlag === 'sbor_fio' && text !== '/talk_chat_gpt') {
             chatFlag = 'sbor_skills';
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.fio = text;
             imitationSql.fio = text;
             return bot.sendMessage(chatId, `Опишите ваши основные навыки/специализацию`);
-          }if (text && chatFlag === 'sbor_fio') {
+          }if (text && chatFlag === 'sbor_fio' && text !== '/talk_chat_gpt') {
             chatFlag = 'sbor_skills';
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.skills = text;
             imitationSql.skills = text;
             return bot.sendMessage(chatId, `Опишите ваши основные навыки/специализацию`);
-          }if (text && chatFlag === 'sbor_skills') {
+          }if (text && chatFlag === 'sbor_skills' && text !== '/talk_chat_gpt') {
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.additional_skills = text;
             imitationSql.additional_skills = text;
             chatFlag = 'sbor_additional_skills';
             return bot.sendMessage(chatId, `Опишите ваши дополнительные навыки`);
-          }if (text && chatFlag === 'sbor_additional_skills') {
+          }if (text && chatFlag === 'sbor_additional_skills' && text !== '/talk_chat_gpt') {
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.questions = text;
             imitationSql.questions = text;
             chatFlag = 'sbor_questions';
             return bot.sendMessage(chatId, `По каким вопросам к вам можно обращаться, и с решением каких вопросов полезно вам?`);
-          }if (text && chatFlag === 'sbor_questions') {
+          }if (text && chatFlag === 'sbor_questions' && text !== '/talk_chat_gpt') {
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.cv = text;
             imitationSql.cv = text;
             chatFlag = 'sbor_cv';
             return bot.sendMessage(chatId, `Отправьте ссылку на ваше резюме`);
-          }if (text && chatFlag === 'sbor_cv') {
+          }if (text && chatFlag === 'sbor_cv' && text !== '/talk_chat_gpt') {
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.projects = text;
             imitationSql.projects = text;
             chatFlag = 'sbor_projects';
             return bot.sendMessage(chatId, `Опишите ваши проекты/достижения`);
-          }if (text && chatFlag === 'sbor_projects') {
+          }if (text && chatFlag === 'sbor_projects' && text !== '/talk_chat_gpt') {
             // const userInfo = await UserModel.findOne({chatId});
             // userInfo.otrabotka = text;
             imitationSql.otrabotka = text;
             chatFlag = 'sbor_otrabotka';
             return bot.sendMessage(chatId, `Укажите для будущего подтверждения отработки. Например вашу должность и чем вы занимались`);
-          }if (text && chatFlag === 'sbor_otrabotka') {
+          }if (text && chatFlag === 'sbor_otrabotka' && text !== '/talk_chat_gpt') {
             chatFlag = '';
             return bot.sendMessage(chatId, `Спасибо опрос окончен`);
           }
