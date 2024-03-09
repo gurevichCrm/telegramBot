@@ -5,7 +5,7 @@ const fs = require('fs');
 // const UserModel = require('./models');
 
 const botToken = '6798766230:AAE8H8FUwXLEiAEkrQHhkip1KYa5hF-7ZAA';
-const openAiKey = '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';
+const openAiKey = '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';
 
 const bot = new TelegramApi(botToken, {polling: true});
 const openAi = new OpenAi({
@@ -125,6 +125,7 @@ const start = async () => {
           // }
           return bot.sendMessage(chatId, 'Я тебя не понимаю, попробуй еще раз!)');
       } catch (e) {
+        console.log(e)
           return bot.sendMessage(chatId, 'Произошла какая то ошибочка!)');
       }
 
